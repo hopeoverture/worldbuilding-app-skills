@@ -14,6 +14,12 @@ worldbuilding-app-skills/
 ├── QUICKSTART.md (quick start guide)
 ├── CLAUDE.md (guidance for Claude Code)
 ├── CATALOG.md (inventory of skills)
+├── .claude-plugin/
+│   └── marketplace.json   - Plugin marketplace manifest
+├── plugins/ (plugin format for marketplace)
+│   ├── nextjs-fullstack-scaffold/
+│   ├── tailwind-shadcn-ui-setup/
+│   └── ... (26 total plugins)
 ├── skills/ (organized by purpose)
 │   ├── development/      - Code generation, refactoring, patterns
 │   ├── data-modeling/    - Entity schemas, relationships, validation
@@ -24,7 +30,9 @@ worldbuilding-app-skills/
 ├── scripts/ (skill management tools)
 │   ├── init_skill.py      - Initialize new skill structure
 │   ├── quick_validate.py  - Validate skill structure
-│   └── package_skill.py   - Package for distribution
+│   ├── package_skill.py   - Package for distribution
+│   └── migrate_to_plugins.py - Convert skills to plugin format
+├── dist/ (packaged skills as .zip files)
 └── docs/ (additional documentation)
 ```
 
@@ -53,7 +61,33 @@ python scripts/init_skill.py my-skill-name --path skills/development
 
 Then edit the generated SKILL.md and supporting files.
 
-## Deploying Skills
+## Installing Skills
+
+### Option 1: Plugin Marketplace (Recommended)
+
+The easiest way to use these skills is through the Claude Code plugin marketplace:
+
+**Step 1: Add the marketplace**
+```
+/plugin marketplace add hopeoverture/worldbuilding-app-skills
+```
+
+**Step 2: Install plugins**
+```
+/plugin install nextjs-fullstack-scaffold@worldbuilding-app-skills
+/plugin install tailwind-shadcn-ui-setup@worldbuilding-app-skills
+/plugin install form-generator-rhf-zod@worldbuilding-app-skills
+```
+
+**Benefits:**
+- One-command installation and updates
+- Easy discovery and version management
+- Works across all your projects
+- Official distribution method
+
+See [docs/plugin-marketplace-guide.md](docs/plugin-marketplace-guide.md) for complete plugin marketplace documentation.
+
+### Option 2: Direct Copy
 
 **Quick Deploy to Project:**
 ```bash
@@ -153,7 +187,9 @@ See [CATALOG.md](CATALOG.md) for the complete inventory of skills.
 
 ## Resources
 
+- **Plugin Marketplace Guide**: [docs/plugin-marketplace-guide.md](docs/plugin-marketplace-guide.md) - Easy installation via Claude Code plugins (recommended)
 - **Deployment Guide**: [docs/skill-deployment-guide.md](docs/skill-deployment-guide.md) - Complete guide for importing skills into projects
+- **Quick Reference**: [docs/deployment-quick-reference.md](docs/deployment-quick-reference.md) - Common deployment commands
 - **Creation Guide**: [docs/skill-creation-guide.md](docs/skill-creation-guide.md) - How to create new skills
 - **Quick Start**: [QUICKSTART.md](QUICKSTART.md) - Get started quickly
 - **Catalog**: [CATALOG.md](CATALOG.md) - Full inventory of available skills

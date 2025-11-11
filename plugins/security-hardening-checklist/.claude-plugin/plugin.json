@@ -1,0 +1,9 @@
+{
+  "name": "security-hardening-checklist",
+  "description": "This skill should be used when the user requests to audit, check, or improve application security by analyzing security headers, cookie configuration, RLS policies, input sanitization, rate limiting, and other security measures. It generates a comprehensive security audit report with actionable recommendations. Trigger terms include security audit, security check, harden security, security review, vulnerability check, security headers, secure cookies, input validation, rate limiting, security be",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "tailwind-shadcn-ui-setup",
+  "description": "This skill should be used when setting up, configuring, or initializing Tailwind CSS (v3 or v4) and shadcn/ui for Next.js 16 App Router projects. Configure dark mode, design tokens, base layout with header/sidebar, accessibility defaults, and generate example components. Includes comprehensive setup automation, theme customization, and production-ready patterns. Use when the user requests \"setup Tailwind\", \"configure shadcn/ui\", \"add dark mode\", \"initialize design system\", or \"setup UI framework",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

@@ -1,0 +1,132 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DIRECT_URL") // Pooled connection for queries
+  directUrl         = env("DATABASE_URL") // Direct connection for migrations
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // For migration preview
+}
+
+// User profile - links to Supabase auth.users
+model Profile {
+  id        String   @id @default(uuid()) @db.Uuid
+  email     String   @unique
+  name      String?
+  avatarUrl String?  @map("avatar_url")
+  bio       String?  @db.Text
+  role      UserRole @default(USER)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  posts    Post[]
+  comments Comment[]
+
+  @@index([email])
+  @@map("profiles")
+}
+
+// User roles enum
+enum UserRole {
+  USER
+  MODERATOR
+  ADMIN
+}
+
+// Blog post example
+model Post {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  excerpt     String?  @db.Text
+  published   Boolean  @default(false)
+  publishedAt DateTime? @map("published_at")
+
+  authorId String  @map("author_id") @db.Uuid
+  author   Profile @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  comments Comment[]
+  tags     PostTag[]
+
+  @@index([authorId])
+  @@index([slug])
+  @@index([published, publishedAt])
+  @@map("posts")
+}
+
+// Comment model
+model Comment {
+  id      String @id @default(uuid()) @db.Uuid
+  content String @db.Text
+
+  postId String @map("post_id") @db.Uuid
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  authorId String  @map("author_id") @db.Uuid
+  author   Profile @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([postId])
+  @@index([authorId])
+  @@map("comments")
+}
+
+// Tag model
+model Tag {
+  id   String @id @default(uuid()) @db.Uuid
+  name String @unique
+  slug String @unique
+
+  posts PostTag[]
+
+  @@index([slug])
+  @@map("tags")
+}
+
+// Many-to-many relation between posts and tags
+model PostTag {
+  postId String @map("post_id") @db.Uuid
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  tagId String @map("tag_id") @db.Uuid
+  tag   Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  assignedAt DateTime @default(now()) @map("assigned_at")
+
+  @@id([postId, tagId])
+  @@map("post_tags")
+}
+
+// Settings model (singleton pattern)
+model Settings {
+  id          String  @id @default(uuid()) @db.Uuid
+  siteName    String  @map("site_name")
+  siteUrl     String  @map("site_url")
+  description String? @db.Text
+
+  // SEO
+  metaTitle       String? @map("meta_title")
+  metaDescription String? @map("meta_description")
+
+  // Features
+  enableComments      Boolean @default(true) @map("enable_comments")
+  enableRegistration  Boolean @default(true) @map("enable_registration")
+  maintenanceMode     Boolean @default(false) @map("maintenance_mode")
+
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}

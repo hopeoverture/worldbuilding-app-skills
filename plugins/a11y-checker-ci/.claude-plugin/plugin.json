@@ -1,0 +1,9 @@
+{
+  "name": "a11y-checker-ci",
+  "description": "Adds comprehensive accessibility testing to CI/CD pipelines using axe-core Playwright integration or pa11y-ci. Automatically generates markdown reports for pull requests showing WCAG violations with severity levels, affected elements, and remediation guidance. This skill should be used when implementing accessibility CI checks, adding a11y tests to pipelines, generating accessibility reports, enforcing WCAG compliance, automating accessibility scans, or setting up PR accessibility gates. Trigger",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

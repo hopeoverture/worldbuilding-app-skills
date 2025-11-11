@@ -1,0 +1,9 @@
+{
+  "name": "markdown-editor-integrator",
+  "description": "This skill should be used when installing and configuring markdown editor functionality using @uiw/react-md-editor. Applies when adding rich text editing, markdown support, WYSIWYG editors, content editing with preview, or text formatting features. Trigger terms include markdown editor, rich text editor, text editor, add markdown, install markdown editor, markdown component, WYSIWYG, content editor, text formatting, editor preview.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

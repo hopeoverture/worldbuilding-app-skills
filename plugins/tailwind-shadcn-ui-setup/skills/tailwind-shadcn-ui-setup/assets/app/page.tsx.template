@@ -1,0 +1,141 @@
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+
+export default function Home() {
+  return (
+    <main id="main-content" className="container py-8">
+      {/* Hero section */}
+      <section className="flex flex-col items-center gap-4 py-12 text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          Welcome to Your App
+        </h1>
+        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
+          Built with Next.js 16, Tailwind CSS, and shadcn/ui. Beautiful,
+          accessible, and fully customizable.
+        </p>
+        <div className="flex gap-4">
+          <Button size="lg" asChild>
+            <Link href="/examples">View Examples</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer">
+              Documentation
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Features grid */}
+      <section className="py-12">
+        <h2 className="mb-8 text-center text-3xl font-bold">Features</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Card>
+            <CardHeader>
+              <CardTitle>Tailwind CSS</CardTitle>
+              <CardDescription>
+                Utility-first CSS framework with custom design tokens
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Fully configured with CSS variables for easy theming and
+                customization.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>shadcn/ui</CardTitle>
+              <CardDescription>
+                Beautiful, accessible component library
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Built on Radix UI primitives with full TypeScript support.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Dark Mode</CardTitle>
+              <CardDescription>
+                Automatic dark mode with system preference
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Seamless theme switching with high contrast in both modes.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Accessibility</CardTitle>
+              <CardDescription>
+                WCAG 2.1 Level AA compliant
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Built with semantic HTML, ARIA attributes, and keyboard
+                navigation.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Type Safe</CardTitle>
+              <CardDescription>
+                Full TypeScript support
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Catch errors at compile time with comprehensive type definitions.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Production Ready</CardTitle>
+              <CardDescription>
+                Optimized for performance
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Fast builds, small bundles, and excellent Lighthouse scores.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA section */}
+      <section className="flex flex-col items-center gap-4 py-12 text-center">
+        <h2 className="text-3xl font-bold">Ready to build?</h2>
+        <p className="max-w-[600px] text-muted-foreground">
+          Explore the example pages to see components in action, or start
+          building your own features.
+        </p>
+        <Button asChild>
+          <Link href="/examples">Explore Examples</Link>
+        </Button>
+      </section>
+    </main>
+  )
+}

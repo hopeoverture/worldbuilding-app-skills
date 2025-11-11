@@ -1,0 +1,9 @@
+{
+  "name": "supabase-prisma-database-management",
+  "description": "This skill should be used when managing database schema, migrations, and seed data using Prisma ORM with Supabase PostgreSQL. Apply when setting up Prisma with Supabase, creating migrations, seeding data, configuring shadow database for migration preview, adding schema validation to CI, or managing database changes across environments.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

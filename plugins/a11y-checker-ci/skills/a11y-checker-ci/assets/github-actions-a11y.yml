@@ -1,0 +1,134 @@
+name: Accessibility Tests
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Start application server
+        run: |
+          npm start &
+          echo $! > .app-pid
+
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000 -t 60000
+
+      - name: Run accessibility tests
+        id: a11y_tests
+        continue-on-error: true
+        run: npm run test:a11y
+
+      - name: Setup Python
+        if: always()
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate accessibility report
+        if: always()
+        run: |
+          python scripts/generate_a11y_report.py \
+            --input test-results/a11y-results.json \
+            --output accessibility-report.md \
+            --format github
+
+      - name: Comment PR with report
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+
+            try {
+              const report = fs.readFileSync('accessibility-report.md', 'utf8')
+
+              // Find existing comment
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number
+              })
+
+              const botComment = comments.find(comment =>
+                comment.user.type === 'Bot' &&
+                comment.body.includes('Accessibility Test Report')
+              )
+
+              const commentBody = report + '\n\n---\n*Automated accessibility check*'
+
+              if (botComment) {
+                // Update existing comment
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: botComment.id,
+                  body: commentBody
+                })
+              } else {
+                // Create new comment
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: commentBody
+                })
+              }
+            } catch (error) {
+              console.error('Error posting comment:', error)
+            }
+
+      - name: Upload accessibility report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-report
+          path: |
+            accessibility-report.md
+            test-results/
+          retention-days: 30
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Stop application server
+        if: always()
+        run: |
+          if [ -f .app-pid ]; then
+            kill $(cat .app-pid) || true
+          fi
+
+      - name: Fail job if violations found
+        if: steps.a11y_tests.outcome == 'failure'
+        run: |
+          echo "[ERROR] Accessibility violations found"
+          exit 1

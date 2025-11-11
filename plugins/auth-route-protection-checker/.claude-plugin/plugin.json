@@ -1,0 +1,9 @@
+{
+  "name": "auth-route-protection-checker",
+  "description": "This skill should be used when the user requests to audit, check, or generate authentication and authorization protection for Next.js routes, server components, API routes, and server actions. It analyzes existing routes for missing auth checks and generates protection logic based on user roles and permissions. Trigger terms include auth check, route protection, protect routes, secure endpoints, auth middleware, role-based routes, authorization check, api security, server action security, protec",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

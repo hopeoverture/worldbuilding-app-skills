@@ -1,0 +1,9 @@
+{
+  "name": "performance-budget-enforcer",
+  "description": "Monitors Lighthouse scores and JavaScript bundle sizes across deployments with automated alerts when performance thresholds are exceeded. This skill should be used when setting up performance monitoring, enforcing bundle size limits, tracking Lighthouse metrics, or adding performance regression detection. Use for performance budgets, bundle size, Lighthouse CI, performance monitoring, regression detection, or web vitals tracking.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

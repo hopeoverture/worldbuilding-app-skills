@@ -1,0 +1,9 @@
+{
+  "name": "github-actions-ci-workflow",
+  "description": "Sets up comprehensive GitHub Actions CI/CD workflows for modern web applications. This skill should be used when configuring automated lint, test, build, and deploy pipelines, adding preview URL comments on pull requests, or optimizing workflow caching. Use when setting up continuous integration, deployment automation, GitHub Actions, CI/CD pipeline, preview deployments, or workflow optimization.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

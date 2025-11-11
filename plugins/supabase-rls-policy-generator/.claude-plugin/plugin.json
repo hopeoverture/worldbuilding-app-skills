@@ -1,0 +1,9 @@
+{
+  "name": "supabase-rls-policy-generator",
+  "description": "This skill should be used when the user requests to generate, create, or add Row-Level Security (RLS) policies for Supabase databases in multi-tenant or role-based applications. It generates comprehensive RLS policies using auth.uid(), auth.jwt() claims, and role-based access patterns. Trigger terms include RLS, row level security, supabase security, generate policies, auth policies, multi-tenant security, role-based access, database security policies, supabase permissions, tenant isolation.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "ui-library-usage-auditor",
+  "description": "This skill should be used when reviewing shadcn/ui component usage to ensure accessibility, consistency, and proper patterns. Applies when auditing UI code, checking component patterns, reviewing layout structure, identifying component extraction opportunities, or ensuring design system compliance. Trigger terms include audit UI, review components, check shadcn, accessibility audit, component review, UI patterns, design system compliance, layout review, refactor components, extract component.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  }
+}

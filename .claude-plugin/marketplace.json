@@ -1,0 +1,295 @@
+{
+  "name": "worldbuilding-app-skills",
+  "owner": {
+    "name": "Hope Overture",
+    "email": "support@worldbuilding-app-skills.dev"
+  },
+  "plugins": [
+    {
+      "name": "nextjs-fullstack-scaffold",
+      "source": "./plugins/nextjs-fullstack-scaffold",
+      "description": "This skill should be used when the user requests to scaffold, create, or initialize a full-stack Next.js application with a modern tech stack including Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, Supabase auth, Prisma ORM, and comprehensive testing setup. Use it for creating production-ready starter templates with authentication, protected routes, forms, and example features. Trigger terms scaffold, create nextjs app, initialize fullstack, starter template, boilerplate, setup n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "tailwind-shadcn-ui-setup",
+      "source": "./plugins/tailwind-shadcn-ui-setup",
+      "description": "This skill should be used when setting up, configuring, or initializing Tailwind CSS (v3 or v4) and shadcn/ui for Next.js 16 App Router projects. Configure dark mode, design tokens, base layout with header/sidebar, accessibility defaults, and generate example components. Includes comprehensive setup automation, theme customization, and production-ready patterns. Use when the user requests \"setup Tailwind\", \"configure shadcn/ui\", \"add dark mode\", \"initialize design system\", or \"setup UI framework",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "supabase-rls-policy-generator",
+      "source": "./plugins/supabase-rls-policy-generator",
+      "description": "This skill should be used when the user requests to generate, create, or add Row-Level Security (RLS) policies for Supabase databases in multi-tenant or role-based applications. It generates comprehensive RLS policies using auth.uid(), auth.jwt() claims, and role-based access patterns. Trigger terms include RLS, row level security, supabase security, generate policies, auth policies, multi-tenant security, role-based access, database security policies, supabase permissions, tenant isolation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "auth-route-protection-checker",
+      "source": "./plugins/auth-route-protection-checker",
+      "description": "This skill should be used when the user requests to audit, check, or generate authentication and authorization protection for Next.js routes, server components, API routes, and server actions. It analyzes existing routes for missing auth checks and generates protection logic based on user roles and permissions. Trigger terms include auth check, route protection, protect routes, secure endpoints, auth middleware, role-based routes, authorization check, api security, server action security, protec",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "security-hardening-checklist",
+      "source": "./plugins/security-hardening-checklist",
+      "description": "This skill should be used when the user requests to audit, check, or improve application security by analyzing security headers, cookie configuration, RLS policies, input sanitization, rate limiting, and other security measures. It generates a comprehensive security audit report with actionable recommendations. Trigger terms include security audit, security check, harden security, security review, vulnerability check, security headers, secure cookies, input validation, rate limiting, security be",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "api-contracts-and-zod-validation",
+      "source": "./plugins/api-contracts-and-zod-validation",
+      "description": "Generate Zod schemas and TypeScript types for forms, API routes, and Server Actions with runtime validation. Use this skill when creating API contracts, validating request/response payloads, generating form schemas, adding input validation to Server Actions or route handlers, or ensuring type safety across client-server boundaries. Trigger terms include zod, schema, validation, API contract, form validation, type inference, runtime validation, parse, safeParse, input validation, request validati",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "server-actions-vs-api-optimizer",
+      "source": "./plugins/server-actions-vs-api-optimizer",
+      "description": "Analyze routes and recommend whether to use Server Actions or API routes based on use case patterns including authentication, revalidation, external API calls, and client requirements. Use this skill when deciding between Server Actions and API routes, optimizing Next.js data fetching, refactoring routes, analyzing route architecture, or choosing the right data mutation pattern. Trigger terms include Server Actions, API routes, route handler, data mutation, revalidation, authentication flow, ext",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "env-config-validator",
+      "source": "./plugins/env-config-validator",
+      "description": "Validate environment configuration files across local, staging, and production environments. Ensure required secrets, database URLs, API keys, and public variables are properly scoped and set. Use this skill when setting up environments, validating configuration, checking for missing secrets, auditing environment variables, ensuring proper scoping of public vs private vars, or troubleshooting environment issues. Trigger terms include env, environment variables, secrets, configuration, .env file,",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "csp-config-generator",
+      "source": "./plugins/csp-config-generator",
+      "description": "This skill should be used when the user requests to generate, create, or configure Content Security Policy (CSP) headers for Next.js applications to prevent XSS attacks and control resource loading. It analyzes the application to determine appropriate CSP directives and generates configuration via next.config or middleware. Trigger terms include CSP, Content Security Policy, security headers, XSS protection, generate CSP, configure CSP, strict CSP, nonce-based CSP, CSP directives.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "eslint-prettier-husky-config",
+      "source": "./plugins/eslint-prettier-husky-config",
+      "description": "This skill should be used when setting up code quality tooling with ESLint v9 flat config, Prettier formatting, Husky git hooks, lint-staged pre-commit checks, and GitHub Actions CI lint workflow. Apply when initializing linting, adding code formatting, configuring pre-commit hooks, setting up quality gates, or establishing lint CI checks for Next.js or React projects.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "supabase-auth-ssr-setup",
+      "source": "./plugins/supabase-auth-ssr-setup",
+      "description": "This skill should be used when configuring Supabase Auth for server-side rendering with Next.js App Router, including secure cookie handling, middleware protection, route guards, authentication utilities, and logout flow. Apply when setting up SSR auth, adding protected routes, implementing middleware authentication, configuring secure sessions, or building login/logout flows with Supabase.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "supabase-prisma-database-management",
+      "source": "./plugins/supabase-prisma-database-management",
+      "description": "This skill should be used when managing database schema, migrations, and seed data using Prisma ORM with Supabase PostgreSQL. Apply when setting up Prisma with Supabase, creating migrations, seeding data, configuring shadow database for migration preview, adding schema validation to CI, or managing database changes across environments.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "github-actions-ci-workflow",
+      "source": "./plugins/github-actions-ci-workflow",
+      "description": "Sets up comprehensive GitHub Actions CI/CD workflows for modern web applications. This skill should be used when configuring automated lint, test, build, and deploy pipelines, adding preview URL comments on pull requests, or optimizing workflow caching. Use when setting up continuous integration, deployment automation, GitHub Actions, CI/CD pipeline, preview deployments, or workflow optimization.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "feature-flag-manager",
+      "source": "./plugins/feature-flag-manager",
+      "description": "Adds feature flag support using LaunchDarkly or JSON-based configuration to toggle features in UI components and Server Actions. This skill should be used when implementing feature flags, feature toggles, progressive rollouts, A/B testing, or gating functionality behind configuration. Use for feature flags, feature toggles, LaunchDarkly integration, progressive rollout, canary releases, or conditional features.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "sentry-and-otel-setup",
+      "source": "./plugins/sentry-and-otel-setup",
+      "description": "This skill should be used when adding error tracking and performance monitoring with Sentry and OpenTelemetry tracing to Next.js applications. Apply when setting up error monitoring, configuring tracing for Server Actions and routes, implementing logging wrappers, adding performance instrumentation, or establishing observability for debugging production issues.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "revalidation-strategy-planner",
+      "source": "./plugins/revalidation-strategy-planner",
+      "description": "Evaluates Next.js routes and outputs optimal revalidate settings, cache tags for ISR, SSR configurations, or streaming patterns. This skill should be used when optimizing Next.js caching strategies, configuring Incremental Static Regeneration, planning cache invalidation, or choosing between SSR/ISR/SSG. Use for Next.js caching, revalidation, ISR, cache tags, on-demand revalidation, or rendering strategies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "performance-budget-enforcer",
+      "source": "./plugins/performance-budget-enforcer",
+      "description": "Monitors Lighthouse scores and JavaScript bundle sizes across deployments with automated alerts when performance thresholds are exceeded. This skill should be used when setting up performance monitoring, enforcing bundle size limits, tracking Lighthouse metrics, or adding performance regression detection. Use for performance budgets, bundle size, Lighthouse CI, performance monitoring, regression detection, or web vitals tracking.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "role-permission-table-builder",
+      "source": "./plugins/role-permission-table-builder",
+      "description": "Generates comprehensive role-based permission matrices in markdown or SQL format for pages, components, and data access patterns. This skill should be used when designing authorization systems, documenting permissions, creating RBAC tables, or planning access control. Use for RBAC, role permissions, access control, authorization matrix, permission mapping, or security policies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "development"
+    },
+    {
+      "name": "testing-next-stack",
+      "source": "./plugins/testing-next-stack",
+      "description": "Scaffolds comprehensive testing setup for Next.js applications including Vitest unit tests, React Testing Library component tests, and Playwright E2E flows with accessibility testing via axe-core. This skill should be used when setting up test infrastructure, generating test files, creating test utilities, adding accessibility checks, or configuring testing frameworks for Next.js projects. Trigger terms include setup testing, scaffold tests, vitest, RTL, playwright, e2e tests, component tests, u",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "testing"
+    },
+    {
+      "name": "playwright-flow-recorder",
+      "source": "./plugins/playwright-flow-recorder",
+      "description": "Creates Playwright test scripts from natural language user flow descriptions. This skill should be used when generating E2E tests from scenarios, converting user stories to test code, recording user flows, creating test scripts from descriptions like \"user signs up and creates project\", or translating acceptance criteria into executable tests. Trigger terms include playwright test, e2e flow, user scenario, test from description, record flow, user journey, test script generation, acceptance test,",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "testing"
+    },
+    {
+      "name": "a11y-checker-ci",
+      "source": "./plugins/a11y-checker-ci",
+      "description": "Adds comprehensive accessibility testing to CI/CD pipelines using axe-core Playwright integration or pa11y-ci. Automatically generates markdown reports for pull requests showing WCAG violations with severity levels, affected elements, and remediation guidance. This skill should be used when implementing accessibility CI checks, adding a11y tests to pipelines, generating accessibility reports, enforcing WCAG compliance, automating accessibility scans, or setting up PR accessibility gates. Trigger",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "testing"
+    },
+    {
+      "name": "form-generator-rhf-zod",
+      "source": "./plugins/form-generator-rhf-zod",
+      "description": "This skill should be used when generating React forms with React Hook Form, Zod validation, and shadcn/ui components. Applies when creating entity forms, character editors, location forms, data entry forms, or any form requiring client and server validation. Trigger terms include create form, generate form, build form, React Hook Form, RHF, Zod validation, form component, entity form, character form, data entry, form schema.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "ui-components"
+    },
+    {
+      "name": "ui-library-usage-auditor",
+      "source": "./plugins/ui-library-usage-auditor",
+      "description": "This skill should be used when reviewing shadcn/ui component usage to ensure accessibility, consistency, and proper patterns. Applies when auditing UI code, checking component patterns, reviewing layout structure, identifying component extraction opportunities, or ensuring design system compliance. Trigger terms include audit UI, review components, check shadcn, accessibility audit, component review, UI patterns, design system compliance, layout review, refactor components, extract component.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "ui-components"
+    },
+    {
+      "name": "markdown-editor-integrator",
+      "source": "./plugins/markdown-editor-integrator",
+      "description": "This skill should be used when installing and configuring markdown editor functionality using @uiw/react-md-editor. Applies when adding rich text editing, markdown support, WYSIWYG editors, content editing with preview, or text formatting features. Trigger terms include markdown editor, rich text editor, text editor, add markdown, install markdown editor, markdown component, WYSIWYG, content editor, text formatting, editor preview.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "ui-components"
+    },
+    {
+      "name": "docs-and-changelogs",
+      "source": "./plugins/docs-and-changelogs",
+      "description": "Generates comprehensive changelogs from Conventional Commits, maintains CHANGELOG.md files, and scaffolds project documentation like PRD.md or ADR.md. This skill should be used when creating changelogs, generating release notes, maintaining version history, documenting architectural decisions, or scaffolding project requirements documentation. Use for changelog generation, release notes, version documentation, ADR, PRD, or technical documentation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "documentation"
+    },
+    {
+      "name": "skill-reviewer-and-enhancer",
+      "source": "./plugins/skill-reviewer-and-enhancer",
+      "description": "This skill should be used when reviewing, auditing, or improving existing Claude Code skills to ensure they follow Anthropic best practices, have proper structure, use current domain-specific patterns, and include all necessary resources. It analyzes skill quality, identifies gaps, suggests improvements, and can automatically enhance skills with updated best practices. Trigger terms include review skill, audit skill, improve skill, enhance skill, update skill, check skill quality, skill best pra",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hope Overture",
+        "email": "support@worldbuilding-app-skills.dev"
+      },
+      "category": "utilities"
+    }
+  ]
+}
