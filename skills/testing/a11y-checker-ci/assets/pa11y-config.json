@@ -1,0 +1,52 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 1000,
+    "chromeLaunchConfig": {
+      "executablePath": "/usr/bin/chromium-browser",
+      "args": [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    "standard": "WCAG2AA",
+    "runners": [
+      "axe",
+      "htmlcs"
+    ],
+    "hideElements": "iframe, [role='presentation']",
+    "ignore": [
+      "notice",
+      "warning"
+    ],
+    "includeNotices": false,
+    "includeWarnings": false,
+    "level": "error",
+    "reporter": "json",
+    "threshold": 0,
+    "screenCapture": "reports/screenshots/{url}-{datetime}.png",
+    "actions": [
+      "wait for element body to be visible",
+      "wait for element #main-content to be visible"
+    ]
+  },
+  "urls": [
+    {
+      "url": "http://localhost:3000",
+      "screenCapture": "reports/screenshots/homepage.png"
+    },
+    {
+      "url": "http://localhost:3000/entities",
+      "screenCapture": "reports/screenshots/entities.png"
+    },
+    {
+      "url": "http://localhost:3000/timeline",
+      "screenCapture": "reports/screenshots/timeline.png"
+    },
+    {
+      "url": "http://localhost:3000/about",
+      "screenCapture": "reports/screenshots/about.png"
+    }
+  ]
+}

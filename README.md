@@ -55,21 +55,26 @@ Then edit the generated SKILL.md and supporting files.
 
 ## Deploying Skills
 
-**For This Project:**
+**Quick Deploy to Project:**
 ```bash
 # Copy to your worldbuilding app's .claude/skills directory
 cp -r skills/category/skill-name /path/to/worldbuilding-app/.claude/skills/
 ```
 
-**For Personal Use (All Projects):**
+**Deploy to Personal Use (All Projects):**
 ```bash
 cp -r skills/category/skill-name ~/.claude/skills/
 ```
 
-**Package for Distribution:**
+**Deploy from Packaged Zip:**
 ```bash
-python scripts/package_skill.py skills/category/skill-name ./dist
+# All skills are pre-packaged in dist/
+unzip dist/skill-name.zip -d /path/to/project/.claude/skills/
 ```
+
+**For Complete Deployment Guide:**
+See [docs/skill-deployment-guide.md](docs/skill-deployment-guide.md) for detailed instructions,
+troubleshooting, and best practices.
 
 ## Skill Categories
 
@@ -148,10 +153,11 @@ See [CATALOG.md](CATALOG.md) for the complete inventory of skills.
 
 ## Resources
 
-- **Official Documentation**: [docs/skill-creation-guide.md](docs/skill-creation-guide.md)
-- **Quick Start**: [QUICKSTART.md](QUICKSTART.md)
-- **Catalog**: [CATALOG.md](CATALOG.md)
-- **Claude Instructions**: [CLAUDE.md](CLAUDE.md)
+- **Deployment Guide**: [docs/skill-deployment-guide.md](docs/skill-deployment-guide.md) - Complete guide for importing skills into projects
+- **Creation Guide**: [docs/skill-creation-guide.md](docs/skill-creation-guide.md) - How to create new skills
+- **Quick Start**: [QUICKSTART.md](QUICKSTART.md) - Get started quickly
+- **Catalog**: [CATALOG.md](CATALOG.md) - Full inventory of available skills
+- **Claude Instructions**: [CLAUDE.md](CLAUDE.md) - Guidance for Claude Code
 
 ## Contributing
 

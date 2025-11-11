@@ -175,11 +175,56 @@ Before finishing, verify:
 - [ ] Description includes specific trigger terms
 - [ ] Description explains WHAT and WHEN (max 1024 chars)
 - [ ] Instructions use imperative form (verb-first)
+- [ ] NO emoji characters used anywhere in skill files
 - [ ] Resources referenced in SKILL.md
 - [ ] Example files deleted if not needed
 - [ ] `allowed-tools` set if readonly
 - [ ] CATALOG.md updated
 - [ ] Validated: `python scripts/quick_validate.py skills/category/skill-name`
+
+## Emoji Usage Policy
+
+**CRITICAL: Never use emoji characters in skill files**
+
+Emoji characters cause encoding issues on Windows systems and create compatibility problems. Always use ASCII alternatives:
+
+**Forbidden:**
+- ✅ ❌ ⚠️ 💡 🔍 ✓ ✗ (or any other emoji/Unicode decorative characters)
+
+**Use instead:**
+- `[OK]` or `[PASS]` for success
+- `[ERROR]` or `[FAIL]` for errors
+- `[WARN]` or `[WARNING]` for warnings
+- `[TIP]` or `[SUGGEST]` for suggestions
+- `[INFO]` for informational messages
+- `[X]` for failures
+- `[CRITICAL]`, `[SERIOUS]`, `[MODERATE]`, `[MINOR]` for severity levels
+
+**Applies to:**
+- Python scripts
+- SKILL.md files
+- Reference documentation
+- Asset files (TypeScript, YAML, etc.)
+- All text content in skills
+
+**Encoding Setup for Python Scripts:**
+
+All Python scripts must include proper UTF-8 encoding configuration at the top:
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Script description."""
+
+import io
+import sys
+
+# Configure stdout for UTF-8 encoding (prevents Windows encoding errors)
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+```
+
+This prevents encoding errors while still avoiding emoji usage entirely.
 
 ## Skill Categories for This Project
 

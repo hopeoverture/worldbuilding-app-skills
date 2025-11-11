@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Next.js Full-Stack Scaffold Generator
 
@@ -18,10 +19,16 @@ Generates a production-ready Next.js 16 full-stack application with:
 - Playwright for E2E testing
 """
 
+import io
 import os
 import json
+import sys
 from pathlib import Path
 from typing import Dict, Any
+
+# Configure stdout for UTF-8 encoding (prevents Windows encoding errors)
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 
 def prompt_for_details() -> Dict[str, str]:
@@ -68,7 +75,7 @@ def create_folder_structure():
     for folder in folders:
         Path(folder).mkdir(parents=True, exist_ok=True)
 
-    print("✓ Created folder structure")
+    print("[OK] Created folder structure")
 
 
 def create_package_json(details: Dict[str, str]) -> str:
@@ -171,7 +178,7 @@ def generate_all_files(details: Dict[str, str]):
 
     for file_path, content in files.items():
         write_file(file_path, content)
-        print(f"✓ Created {file_path}")
+        print(f"[OK] Created {file_path}")
 
 
 def get_all_file_contents(details: Dict[str, str]) -> Dict[str, str]:
@@ -425,7 +432,7 @@ def main():
     print("\nGenerating project files...")
     generate_all_files(details)
 
-    print("\n✅ Scaffold complete!")
+    print("\n[SUCCESS] Scaffold complete!")
     print("\nNext steps:")
     print("1. Copy .env.example to .env and fill in your Supabase credentials")
     print("2. Run: npm install")
