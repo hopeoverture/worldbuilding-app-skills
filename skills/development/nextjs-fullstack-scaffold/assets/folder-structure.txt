@@ -1,0 +1,80 @@
+project-root/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── (protected)/
+│   │   ├── dashboard/
+│   │   │   └── page.tsx
+│   │   ├── profile/
+│   │   │   └── page.tsx
+│   │   ├── data/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── api/
+│   │   └── data/
+│   │       └── route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── ui/                    (shadcn/ui components)
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── input.tsx
+│   │   ├── label.tsx
+│   │   ├── table.tsx
+│   │   └── ...
+│   ├── auth/
+│   │   ├── login-form.tsx
+│   │   └── auth-button.tsx
+│   ├── dashboard/
+│   │   ├── stats-card.tsx
+│   │   └── data-table.tsx
+│   ├── layout/
+│   │   ├── header.tsx
+│   │   ├── sidebar.tsx
+│   │   └── nav.tsx
+│   └── providers.tsx
+├── lib/
+│   ├── actions/
+│   │   ├── auth.ts
+│   │   ├── data.ts
+│   │   └── user.ts
+│   ├── validations/
+│   │   ├── auth.ts
+│   │   ├── user.ts
+│   │   └── data.ts
+│   ├── supabase/
+│   │   ├── client.ts
+│   │   ├── server.ts
+│   │   └── middleware.ts
+│   ├── prisma.ts
+│   └── utils.ts
+├── prisma/
+│   ├── schema.prisma
+│   └── seed.ts
+├── tests/
+│   ├── unit/
+│   │   └── utils.test.ts
+│   ├── integration/
+│   │   └── auth.test.tsx
+│   └── e2e/
+│       └── login.spec.ts
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── public/
+├── .env.example
+├── .gitignore
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── playwright.config.ts
+├── postcss.config.mjs
+├── prettier.config.js
+├── README.md
+├── tailwind.config.ts
+├── tsconfig.json
+└── vitest.config.ts

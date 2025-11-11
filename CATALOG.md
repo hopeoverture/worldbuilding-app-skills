@@ -6,7 +6,25 @@ Inventory of Claude Code skills for worldbuilding application development.
 
 *Skills for code generation, refactoring, debugging, and architectural patterns.*
 
-(Skills will be added here as they're created)
+### nextjs-fullstack-scaffold
+
+**Location**: `skills/development/nextjs-fullstack-scaffold/`
+**Type**: Workflow-Based
+**Description**: Scaffolds a production-ready full-stack Next.js application with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, shadcn/ui, Supabase authentication, Prisma ORM, comprehensive testing (Vitest + Playwright), and CI/CD setup. Generates complete folder structure, configuration files, authentication flow, protected routes, example components, database schema, and tests.
+
+**Trigger Terms**: scaffold, create nextjs app, initialize fullstack, starter template, boilerplate, setup nextjs, production template, full-stack setup, nextjs supabase, nextjs prisma
+
+**Resources**:
+- scripts/scaffold.py - Python scaffolding script for generating project files
+- references/stack-architecture.md - Complete architecture patterns and best practices
+- references/implementation-checklist.md - Step-by-step checklist for all features
+- assets/folder-structure.txt - Visual representation of project structure
+- assets/templates/package.template.json - package.json template with all dependencies
+
+**Example Usage**:
+> "Create a new Next.js app with Supabase authentication and Prisma"
+> "Scaffold a full-stack Next.js application with TypeScript and Tailwind"
+> "Initialize a production-ready Next.js starter template"
 
 ---
 
